@@ -1,0 +1,104 @@
+@import "../../global.scss";
+
+.portfolio {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 20px 0;
+  gap: 0.7rem;
+  @include mobile {
+    gap: 0.1rem;
+    padding: 12px 0;
+  }
+
+  h1 {
+    font-size: 50px;
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  ul {
+    margin: 10px;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    @include mobile {
+      justify-content: space-around;
+      gap: 0.5rem;
+      align-items: center;
+      padding: 5px 3px;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+    .portfolioList {
+      font-size: 14px;
+      margin-right: 50px;
+      padding: 7px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      @include mobile {
+        margin-right: 0;
+      }
+
+      &.active {
+        background-color: $mainColor;
+        color: white;
+      }
+    }
+  }
+
+  .container {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include mobile {
+      width: 100%;
+    }
+
+    .item {
+      width: 220px;
+      height: 150px;
+      border-radius: 20px;
+      border: 1px solid rgb(240, 239, 239);
+      margin: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      position: relative;
+      transition: all 0.5s ease;
+      cursor: pointer;
+      border: 0.1px dotted $mainColor;
+      @include mobile {
+        width: 200px;
+        height: 140px;
+      }
+
+      h3 {
+        position: absolute;
+        font-size: 20px;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      &:hover {
+        background-color: $mainColor;
+        img {
+          opacity: 0.2;
+          z-index: 0;
+        }
+      }
+    }
+  }
+}

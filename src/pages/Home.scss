@@ -1,0 +1,19 @@
+.sections {
+  height: calc(100vh - 70px);
+  width: 100%;
+  position: relative;
+  top: 70px;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+  }
+  > * {
+    width: 100vw;
+    height: calc(100vh - 70px);
+    scroll-snap-align: start;
+  }
+}
